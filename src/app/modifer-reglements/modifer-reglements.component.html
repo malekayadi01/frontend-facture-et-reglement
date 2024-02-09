@@ -1,0 +1,18 @@
+<!-- modifier-reglement.component.html -->
+<div class="container mt-4">
+    <h2>Modify Payment</h2>
+  
+    <form (ngSubmit)="updateReglement()">
+      <!-- Add form fields for updating payment details -->
+      <label>Date:</label>
+      <input type="date" [(ngModel)]="reglement.dateR" name="dateR" required>
+  
+      <label>Amount:</label>
+      <input type="number" [(ngModel)]="reglement.montant" name="montant" required>
+  
+      <!-- Add other form fields as needed -->
+  
+      <button type="submit" class="btn btn-primary">Update Payment</button>
+    </form>
+  </div>
+  

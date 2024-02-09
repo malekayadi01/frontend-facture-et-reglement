@@ -1,0 +1,34 @@
+<div class="container mt-4">
+  <button class="btn btn-primary mb-2" (click)="navigateToAddFacture()">Ajouter Facture</button>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Facture ID</th>
+        <th>Date</th>
+        <th>Client</th>
+        <th>Montant</th>
+        <th>Montant Restant</th>
+        <th>Montant Payer</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let facture of factures">
+        <td>{{ facture.idF }}</td>
+        <td>{{ facture.date }}</td>
+        <td>{{ facture.client }}</td>
+        <td>{{ facture.montant }}</td>
+        <td>{{ facture.montantRestantAPayer }}</td>
+        <td>{{ facture.montantPayer }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" (click)="modifierFacture(facture.idF)">Modifier</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteFacture(facture.idF)">Supprimer</button>
+          
+          <!-- Replace "Ajouter Règlement" with "Voir Règlements" -->
+          <button class="btn btn-success btn-sm" (click)="voirReglements(facture.idF)">Voir Règlements</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

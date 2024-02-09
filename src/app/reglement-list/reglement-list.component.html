@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <h2>Payments for Invoice {{ factureId }}</h2>
+  
+    <!-- Add button to navigate to the add payment page -->
+    <button class="btn btn-success mb-2" (click)="navigateToAddReglement()">
+      Add Payment
+    </button>
+    
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Payment ID</th>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Action</th> <!-- Add Action column header -->
+          <!-- Add other payment-related fields as needed -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reglement of reglements">
+          <td>{{ reglement.idR }}</td>
+          <td>{{ reglement.dateR }}</td>
+          <td>{{ reglement.montant }}</td>
+          <td>
+            <!-- Add Modifier button with click event -->
+            <button class="btn btn-warning btn-sm" (click)="modifierReglement(reglement.idR)">Modifier</button>
+            <button class="btn btn-danger btn-sm" (click)="supprimerReglement(reglement.idR)">Supprimer</button>
+          </td>
+          <!-- Add other payment-related fields as needed -->
+        </tr>
+      </tbody>
+    </table>
+</div>

@@ -1,0 +1,20 @@
+<div class="container mt-4">
+    <h2>Add Payment for Invoice {{ factureId }}</h2>
+  
+    <!-- Add your form for adding a payment here -->
+  
+    <form (ngSubmit)="addReglement()">
+      <!-- Add form fields for payment details (date, amount, etc.) -->
+      <!-- Example: -->
+      <label>Date:</label>
+      <input type="date" [(ngModel)]="reglement.dateR" name="dateR" required>
+  
+      <label>Amount:</label>
+      <input type="number" [(ngModel)]="reglement.montant" name="montant" required>
+  
+      <!-- Add other form fields as needed -->
+  
+      <button type="submit" class="btn btn-primary">Add Payment</button>
+    </form>
+  </div>
+  
